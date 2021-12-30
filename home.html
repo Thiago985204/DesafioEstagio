@@ -1,0 +1,103 @@
+<html ng-app="nomeDoModulo" lang="pt-br">
+	<!-- 
+						Documentação para consulta
+		BOOTSTRAP: https://getbootstrap.com/docs/4.4/getting-started/introduction/ 
+		ANGUJARJS: https://docs.angularjs.org/guide
+		AMBOS:     https://www.w3schools.com/
+		INSTRUÇÕES DA API: http://fipeapi.appspot.com/
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>Desafio estágio</title>
+			<!-- <link  href="Bootstrap-v4-4-1/bootstrap.min.css" rel="stylesheet">
+			<script src="Bootstrap-v4-4-1/popper.min.js"></script>
+			<script src="Bootstrap-v4-4-1/slim.min.js"></script>
+			<script src="Bootstrap-v4-4-1/bootstrap.min.js"></script> -->
+			<!-- Google Font: Source Sans Pro -->
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+			<!-- Font Awesome -->
+			<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+			<!-- Ionicons -->
+			<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+			<!-- Tempusdominus Bootstrap 4 -->
+			<link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+			<!-- iCheck -->
+			<link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+			<!-- JQVMap -->
+			<link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+			<!-- Theme style -->
+			<link rel="stylesheet" href="dist/css/adminlte.min.css">
+			<!-- overlayScrollbars -->
+			<link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+			<!-- Daterange picker -->
+			<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+			<!-- summernote -->
+			<link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+			
+		
+
+			<script src="arquivosJS/angular.js"></script>
+			<script src="homeController.js"></script>
+			<script src="arquivosJS/angular-route.min.js"></script>
+	</head>
+
+	<body data-ng-controller="controladorDaPagina as vm">
+		<h1 ng-if="vm.exibirNome"><u>{{vm.nome}}</u></h1>
+		<input ng-change="vm.mostrarTitulo(vm.nome)" ng-model="vm.nome"/>
+			<div class="container" ng-init="vm.funcaoIniciar()">
+				<div ng-repeat="item in vm.dados"> 
+					{{item.id}}
+					{{item.destino}}
+					{{item.estado}}
+					{{item.origem}}
+				</div>
+				<div class="container">
+					<div class="card">
+						<!-- /.card-header -->
+						<div class="card-body">
+						  <ul class="todo-list" data-widget="todo-list">
+								<div class="card">
+									<div class="card-header">
+									  <h3 class="card-title">Tabela</h3>
+									</div>
+									<!-- /.card-header -->
+									<div class="card-body">
+									  <table class="table table-bordered">
+										<thead>
+										  <tr>
+											<th style="width: 10px">#</th>
+											<th>Status</th>
+											<th>Origem</th>
+											<th>Destino</th>
+											<th style="width: 40px">Label</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr ng-repeat="item in vm.dados"	>
+											<td>{{item.id}}</td>
+											<td>{{item.estado}}</td>
+											<td>{{item.origem}}</td>
+											<td>{{item.destino}}</td>
+											<td>
+											  <div class="progress progress-xs">
+												<div class="{{item.cor}}" style="width: 100%"></div>
+											  </div>
+											</td>
+										  </tr>
+										 
+										</tbody>
+									  </table>
+									</div>
+								  </div>
+						</div>
+						<!-- /.card-body -->
+					  </div>
+				</div>
+			
+
+
+			
+			</div>
+
+		</body>
+</html>
