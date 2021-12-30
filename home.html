@@ -39,18 +39,58 @@
 			<script src="arquivosJS/angular.js"></script>
 			<script src="homeController.js"></script>
 			<script src="arquivosJS/angular-route.min.js"></script>
+			
 	</head>
 
 	<body data-ng-controller="controladorDaPagina as vm">
-		<h1 ng-if="vm.exibirNome"><u>{{vm.nome}}</u></h1>
-		<input ng-change="vm.mostrarTitulo(vm.nome)" ng-model="vm.nome"/>
 			<div class="container" ng-init="vm.funcaoIniciar()">
-				<div ng-repeat="item in vm.dados"> 
-					{{item.id}}
-					{{item.destino}}
-					{{item.estado}}
-					{{item.origem}}
+				<!-- inicio do dashbord -->
+				<div class="content-header">
+					<div class="container-fluid">
+					  <div class="row mb-2">
+						<div class="col-sm-6">
+						  <h1 class="m-0">Dashboard</h1>
+						</div>
+					  </div>
+					</div>
 				</div>
+				<div class="container">
+					<section class="content">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-lg-4 col-6">
+								<div class="small-box bg-success">
+									<div class="inner">
+										<h3>{{vm.emCurso}}</h3>
+										<p>Em curso</p>
+									</div>
+								</div>
+								</div>
+								<div class="col-lg-4 col-6">
+								<div class="small-box bg-info">
+										<div class="inner">
+										<h3>{{vm.emSelecao}}</h3>
+										<p>Em Seleção de Fluxo</p>
+									</div>
+								</div>
+								</div>
+								<!-- ./col -->
+								<div class="col-lg-4 col-6">
+								<!-- small box -->
+								<div class="small-box bg-warning">
+									<div class="inner">
+										<h3>{{vm.chamando}}</h3>
+										<p>Chamando</p>
+									</div>
+								</div>
+								</div>
+								<!-- ./col -->
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-- fim do dashbord -->
+				<!-- inicio da tabela -->
 				<div class="container">
 					<div class="card">
 						<!-- /.card-header -->
